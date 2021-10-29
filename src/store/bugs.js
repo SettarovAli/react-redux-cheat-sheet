@@ -114,13 +114,13 @@ export const resolveBug = (id) =>
 
 // Selectors, Memoization
 export const selectUnresolvedBugs = createSelector(
-  (state) => state.entities.bugs,
+  (state) => state.entities.bugs.list,
   (bugs) => bugs.filter((bug) => !bug.resolved)
 );
 
 export const selectBugsByUser = (userId) =>
   createSelector(
-    (state) => state.entities.bugs,
+    (state) => state.entities.bugs.list,
     (bugs) => bugs.filter((bug) => bug.userId === userId)
   );
 
